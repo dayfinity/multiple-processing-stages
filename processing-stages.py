@@ -53,3 +53,20 @@ def execute_flow():
 
     contract.record("verified")
     return contract
+
+def audit(contract):
+    print("\nTimeline:")
+    for t in contract.timeline:
+        print(t)
+
+def summary(contract):
+    print("\nSummary:", contract.goal)
+
+def main():
+    c = execute_flow()
+    audit(c)
+    summary(c)
+    print("Workflow complete")
+
+if __name__ == "__main__":
+    main()
